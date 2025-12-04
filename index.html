@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@chignedev | Links</title>
+  <meta name="description" content="Chigne Dev — desarrollador y diseñador web/móvil. Enlaces oficiales." />
+
+  <!-- Favicon -->
+  <link rel="icon" href="http://chigne.com/wp-content/uploads/2025/11/Small-icon-chigne-dev.png" />
+
+  <style>
+    :root {
+      --bg: #000000;         /* negro base */
+      --card: #0b0b0b;
+      --text: #ffffff;
+      --muted: #b5b5b5;
+      --accent1: #FF4308;   /* degradado inicio */
+      --accent2: #FB8500;   /* degradado fin */
+      --radius: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    body {
+      min-height: 100vh;
+      display: grid;
+      place-items: center;
+      background: radial-gradient(700px 300px at 50% -20%, rgba(251,133,0,.25), transparent), #000;
+      color: var(--text);
+      padding: 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 420px;
+      background: linear-gradient(180deg, #161c24, var(--card));
+      border-radius: var(--radius);
+      padding: 26px 22px 28px;
+      box-shadow: 0 30px 70px rgba(0, 0, 0, 0.55);
+      text-align: center;
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .brand {
+      margin-bottom: 8px;
+    }
+
+    .logo {
+      max-width: 180px;
+      width: 70%;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 6px 18px rgba(0,0,0,.45));
+    }
+
+    .avatar {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 255, 255, 0.12);
+      margin: 6px auto 10px;
+      display: block;
+      background: #000;
+    }
+
+    h1 {
+      font-size: 1.25rem;
+      margin-bottom: 2px;
+      letter-spacing: 0.3px;
+    }
+
+    .subtitle {
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 14px;
+    }
+
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 16px;
+      font-size: 1.05rem;
+    }
+
+    .socials a {
+      color: var(--text);
+      opacity: 0.85;
+      text-decoration: none;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      filter: invert(1);
+      transition: transform 0.15s ease, filter 0.15s ease, opacity 0.15s ease;
+      opacity: .85;
+    }
+
+    .light .icon {
+      filter: invert(0);
+    }
+
+    .socials a:hover {
+      transform: translateY(-2px);
+      opacity: 1;
+    }
+
+    /* HOVER NARANJA EN ICONOS SOCIALES */
+    .socials a {
+      position: relative;
+    }
+
+    .socials a::before {
+      content: "";
+      position: absolute;
+      inset: -8px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      opacity: 0;
+      transition: opacity .2s ease;
+      z-index: 0;
+      filter: blur(6px);
+    }
+
+    .socials a:hover::before {
+      opacity: .9;
+    }
+
+    .socials a .icon {
+      position: relative;
+      z-index: 1;
+    }
+
+    .links {
+      margin-top: 6px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      padding: 16px 20px; /* más alto */
+      min-height: 52px;  /* volumen visual */
+      border-radius: 28px; /* menos aplanado */
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: #1a2028;
+      color: var(--text);
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    }
+
+    .with-icon {
+      padding-left: 56px; /* espacio para icono */
+    }
+
+    /* CENTRADO REAL DEL TEXTO (corrige desplazamiento visual) */
+    .with-icon span {
+      position: absolute;
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
+
+    .btn-icon {
+      position: absolute;
+      left: 18px; /* totalmente a la izquierda */
+      width: 22px; /* tamaño uniforme */
+      height: 22px;
+      object-fit: contain;
+      filter: invert(1);
+      opacity: .9;
+    }
+
+    .light .btn-icon {
+      filter: invert(0);
+    }
+
+    .no-invert {
+      filter: none !important; /* tu icono siempre blanco */
+    }
+
+    .btn span {
+      margin: 0 auto; /* mantiene el texto centrado real */
+      pointer-events: none;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.45);
+      background: #202833;
+    }
+
+    .btn.primary {
+      background: linear-gradient(135deg, var(--accent1), var(--accent2));
+      color: #ffffff; /* texto blanco */
+      border-color: transparent;
+    }
+
+    .btn.primary:hover {
+      background: linear-gradient(135deg, var(--accent2), var(--accent1));
+    }
+
+    /* EFECTO CLICK PARA TODOS LOS BOTONES */
+    .btn:active {
+      background: linear-gradient(135deg, var(--accent1), var(--accent2)) !important;
+      transform: scale(0.97);
+    }
+
+    .btn:active,
+    .btn:active span,
+    .btn:active .btn-icon {
+      color: #ffffff !important; /* texto e iconos no cambian */
+      filter: none !important;
+      opacity: 1;
+    }
+
+    .footer {
+      margin-top: 12px;
+      font-size: 0.65rem;
+      color: var(--muted);
+      user-select: none;
+    }
+
+    
+
+    .light {
+      --bg: #000000;
+      --card: #080808;
+      --text: #ffffff;
+      --muted: #bdbdbd;
+      --accent1: #FF4308;
+      --accent2: #FB8500;
+    }
+  </style>
+</head>
+<body>
+
+  
+
+  <main class="card">
+
+    <!-- LOGO -->
+    <div class="brand">
+      <img src="http://chigne.com/wp-content/uploads/2025/11/Chigne-Dev-main.svg" alt="Chigne Dev" class="logo" id="logo">
+    </div>
+
+    <!-- FOTO PERFIL -->
+    <img src="http://chigne.com/wp-content/uploads/2025/12/unnamed.jpg" alt="Chigne" class="avatar">
+
+    <h1>@chignedev</h1>
+    <p class="subtitle">Desarrollador & Diseñador Web/Móvil</p>
+
+    <!-- REDES -->
+    <div class="socials">
+      <a href="https://www.youtube.com/@chignedev" target="_blank" aria-label="YouTube">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/youtube.svg" class="icon" alt="YouTube">
+      </a>
+      <a href="https://www.tiktok.com/@chignedev" target="_blank" aria-label="TikTok">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/tiktok.svg" class="icon" alt="TikTok">
+      </a>
+      <a href="https://www.instagram.com/ed.22c/" target="_blank" aria-label="Instagram">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" class="icon" alt="Instagram">
+      </a>
+      <a href="mailto:contacto@chigne.com" aria-label="Email">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/gmail.svg" class="icon" alt="Email">
+      </a>
+      <a href="https://facebook.com/chignedev" target="_blank" aria-label="Facebook">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" class="icon" alt="Facebook">
+      </a>
+    </div>
+
+    <!-- BOTONES PRINCIPALES -->
+    <section class="links">
+      <a class="btn primary with-icon" href="https://chigne.com">
+        <img src="http://chigne.com/wp-content/uploads/2025/11/Sm-icon-chigne-dev-white.png" class="btn-icon no-invert" alt="Chigne">
+        <span>Sitio Web</span>
+      </a>
+      <a class="btn with-icon" href="https://www.linkedin.com/in/edwinchigne/" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/linkedin.svg" class="btn-icon" alt="LinkedIn">
+        <span>LinkedIn</span>
+      </a>
+      <a class="btn with-icon" href="https://github.com/chignedev" target="_blank">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/github.svg" class="btn-icon" alt="GitHub">
+        <span>GitHub</span>
+      </a>
+    </section>
+
+    <p class="footer">© 2025 Chigne</p>
+
+  </main>
+
+  
+
+</body>
+</html>
